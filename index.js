@@ -146,18 +146,18 @@ const ctx = canvas.getContext('2d')
 
 const graphic = new App(ctx)
 
-const radiusInput = $("input[name='radius']")
+const diameter = $("input[name='diameter']")
 const squareInput = $("input[name='edge']")
 const offsetInput = $("input[name='offset']")
 const resultDisplay = $("span#result")
 const methodSelect = $("select[name='method']")
-radiusInput.addEventListener('change', drawPicture)
+diameter.addEventListener('change', drawPicture)
 squareInput.addEventListener('change', drawPicture)
 offsetInput.addEventListener('change', drawPicture)
 methodSelect.addEventListener('change', drawPicture)
 
 function drawPicture() {
-    const radius = Number(radiusInput.value || 150)
+    const radius = Number(diameter.value || 300) / 2
     const edge = Number(squareInput.value || 21)
     const offset = Number(offsetInput.value || 0)
     if (methodSelect.value === "0") graphic.calculate(radius, edge, offset)
